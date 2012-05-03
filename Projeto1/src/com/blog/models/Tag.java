@@ -4,12 +4,10 @@ public class Tag {
 	
 	private int id;
 	private String name;
-	private Post post;
 	
-	public Tag(int id, String name, Post post) {
+	public Tag(int id, String name) {
 		this.id = id;
 		this.name = name;
-		this.post = post;
 	}
 	
 	public int getId() {
@@ -22,14 +20,6 @@ public class Tag {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Post getPost() {
-		return post;
-	}
-
-	public void setPost(Post post) {
-		this.post = post;
 	}
 
 }
