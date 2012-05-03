@@ -1,6 +1,8 @@
 package com.blog.models;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Post {
 	
@@ -9,13 +11,19 @@ public class Post {
 	private Date addDate;
 	private String title;
 	private String content;
+	private List<Category> categories = new ArrayList<Category>();
+	private List<Comment> comments = new ArrayList<Comment>();
+	private List<Tag> tags = new ArrayList<Tag>();
 	private boolean isPublished;
 	
-	public Post(int id, User user, String title, String content, boolean isPublished) {
+	public Post(int id, User user, String title, String content, List<Category> categories, List<Comment> comments, List<Tag> tags, boolean isPublished) {
 		this.id = id;
 		this.user = user;
 		this.title = title;
 		this.content = content;
+		this.categories = categories;
+		this.comments = comments;
+		this.tags = tags;
 		this.isPublished = isPublished;
 		this.setAddDate(new Date(System.currentTimeMillis()));
 	}
@@ -56,6 +64,35 @@ public class Post {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
+
+	public List<Tag> getTags() {
+		return tags;
+	}
+
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
+	
+	public List<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
+	}
+
 
 	public boolean isPublished() {
 		return isPublished;
