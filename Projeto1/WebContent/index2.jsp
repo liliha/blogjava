@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,6 +29,8 @@
           <ul class="nav">
           </ul>
 	 <p class="pull-right">
+	
+	   
 	<!--  <?php
 	    $user_login = $this->session->userdata('login');
 	    $logado = $this->session->userdata('is_logged_in');
@@ -45,6 +50,11 @@
     </div>
 <div class="container">
       <div class="content">
+      
+      <c:forEach var="listPosts" items="${listPosts}">
+	 	${listPosts} <br />
+	 </c:forEach>
+	 
 	      <!-- <? if($this->session->flashdata('message')): ?> 
                <div class="alert-message info fade in">
                <? echo $this->session->flashdata('message');  ?>
