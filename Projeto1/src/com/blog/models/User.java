@@ -9,8 +9,13 @@ public class User {
 	private String password;
 	private boolean hasAdminPrivs;
 		
-	public static void main(String[] args) {
-	
+	public User(int id, String login, String name, String email, String password, boolean hasAdminPrivs) {
+		this.id = id;
+		this.login = login;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.hasAdminPrivs = hasAdminPrivs;
 	}
 
 	public int getId() {

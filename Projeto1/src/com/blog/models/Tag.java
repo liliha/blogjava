@@ -6,8 +6,10 @@ public class Tag {
 	private String name;
 	private Post post;
 	
-	public static void main(String[] args) {
-	
+	public Tag(int id, String name, Post post) {
+		this.id = id;
+		this.name = name;
+		this.post = post;
 	}
 	
 	public int getId() {

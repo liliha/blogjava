@@ -1,5 +1,7 @@
 package com.blog.models;
 
+import java.util.Date;
+
 public class Comment {
 	
 	private int id;
@@ -7,11 +9,19 @@ public class Comment {
 	private User user;
 	private String title;
 	private String message;
+	private Date addDate;
 	private boolean isApproved;
-
-	public static void main(String[] args) {
 	
+	public Comment(int id, Post post, User user, String title, String message, boolean isApproved) {
+		this.id = id;
+		this.post = post;
+		this.user = user;
+		this.title = title;
+		this.message = message;
+		this.isApproved = isApproved;
+		this.setAddDate(new Date(System.currentTimeMillis()));
 	}
+
 
 	public int getId() {
 		return id;
@@ -47,6 +57,14 @@ public class Comment {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+	
+	public Date getAddDate() {
+		return addDate;
+	}
+
+	public void setAddDate(Date addDate) {
+		this.addDate = addDate;
 	}
 
 	public boolean isApproved() {

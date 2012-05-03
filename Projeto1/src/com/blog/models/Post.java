@@ -6,14 +6,20 @@ public class Post {
 	
 	private int id;
 	private User user;
-	private Date addDate = new Date();
+	private Date addDate;
 	private String title;
 	private String content;
 	private boolean isPublished;
 	
-	public static void main(String[] args) {
-	
+	public Post(int id, User user, String title, String content, boolean isPublished) {
+		this.id = id;
+		this.user = user;
+		this.title = title;
+		this.content = content;
+		this.isPublished = isPublished;
+		this.setAddDate(new Date(System.currentTimeMillis()));
 	}
+
 	
 	public int getId() {
 		return id;
