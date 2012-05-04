@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.blog.models.Post;
 
-@WebServlet("/index.jsp")
+@WebServlet("/LoadIndex")
 
 public class ListPosts extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -30,9 +30,9 @@ public class ListPosts extends HttpServlet {
 		coisas.add(5, new Post("fff"));
 		
 		request.setAttribute("listPosts", coisas);
-		RequestDispatcher rd = request.getRequestDispatcher("index2.jsp");
-		rd.forward(request, response);
 		
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+		rd.forward(request, response);		
 		
 	}
 
