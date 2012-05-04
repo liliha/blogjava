@@ -24,9 +24,9 @@ public class Post {
 	private Date addDate;
 	private String title;
 	private String content;
-	private List<Category> categories = new ArrayList<Category>();
-	private List<Comment> comments = new ArrayList<Comment>();
-	private List<Tag> tags = new ArrayList<Tag>();
+	private List<Category> categories;
+	private List<Comment> comments;
+	private List<Tag> tags;
 	private boolean isPublished;
 	private String x;
 	
@@ -35,11 +35,11 @@ public class Post {
 		return "Post [x=" + x + "]";
 	}
 
-	public Post(String x) {
+	/*public Post(String x) {
 		this.x = x;
-};
+};*/
 	
-	/*public Post(int id, User user, String title, String content, List<Category> categories, List<Comment> comments, List<Tag> tags, boolean isPublished) {
+	public Post(int id, User user, String title, String content, List<Category> categories, List<Comment> comments, List<Tag> tags, boolean isPublished) {
 		this.id = id;
 		this.user = user;
 		this.title = title;
@@ -49,7 +49,7 @@ public class Post {
 		this.tags = tags;
 		this.isPublished = isPublished;
 		this.setAddDate(new Date(System.currentTimeMillis()));
-	}*/
+	}
 
 	
 	public int getId() {
@@ -128,12 +128,12 @@ public class Post {
 	public List<Post> listar() {
 		
 		List<Post> coisas = new ArrayList<Post>();
-		coisas.add(0, new Post("aaa"));
-		coisas.add(1, new Post("bbb"));
-		coisas.add(2, new Post("ccc"));
-		coisas.add(3, new Post("ddd"));
-		coisas.add(4, new Post("eee"));
-		coisas.add(5, new Post("fff"));
+	//	coisas.add(0, new Post("aaa"));
+		//coisas.add(1, new Post("bbb"));
+		//coisas.add(2, new Post("ccc"));
+	//	coisas.add(3, new Post("ddd"));
+	//	coisas.add(4, new Post("eee"));
+	//	coisas.add(5, new Post("fff"));
 		
 		return coisas;
 	}

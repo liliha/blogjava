@@ -22,12 +22,12 @@ public class ListPosts extends HttpServlet {
 			
 		List<Post> coisas = new ArrayList<Post>();
 		
-		coisas.add(0, new Post("aaa"));
-		coisas.add(1, new Post("bbb"));
-		coisas.add(2, new Post("ccc"));
-		coisas.add(3, new Post("ddd"));
-		coisas.add(4, new Post("eee"));
-		coisas.add(5, new Post("fff"));
+	//	coisas.add(0, new Post("aaa"));
+		//coisas.add(1, new Post("bbb"));
+		//coisas.add(2, new Post("ccc"));
+		//coisas.add(3, new Post("ddd"));
+		//coisas.add(4, new Post("eee"));
+		//coisas.add(5, new Post("fff"));
 		
 		request.setAttribute("listPosts", coisas);
 		
