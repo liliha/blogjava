@@ -5,7 +5,7 @@
 
 	<persistence-unit name="javablog">
 	
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 	
 		<class>com.blog.models.User</class>	
 		<class>com.blog.models.Tag</class>
@@ -16,7 +16,14 @@
     <exclude-unlisted-classes/>
 
 		<properties>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="eclipselink.jdbc.password" value="dsd"/>
+			<property name="eclipselink.jdbc.user" value="romulobk_blog"/>
+			<property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="eclipselink.jdbc.url" value="jdbc:mysql://evolution.pbservers.com:3306/romulobk_blog"/>
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+			<property name="eclipselink.logging.level" value="INFO"/>
+					
+			<!-- <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.username" value="romulobk_blog" />
 			<property name="javax.persistence.jdbc.password" value="dsd" />
 			<property name="javax.persistence.jdbc.connection.url" value="jdbc:mysql://evolution.pbservers.com:3306/romulobk_blog" />
@@ -24,9 +31,15 @@
 			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.use_sql_comments" value="true" />
 			<property name="hibernate.hbm2ddl.auto" value="create" />
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" /> -->
+			
+			
 		</properties>
 
 	</persistence-unit>
+	
+
+	
+	
 	
 </persistence>

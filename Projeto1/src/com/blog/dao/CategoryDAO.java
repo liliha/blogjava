@@ -20,7 +20,7 @@ public class CategoryDAO {
        }
        public DAO() {
                //chamo ele de reprodutor da instância
-               emf = Persistence.createEntityManagerFactory("sistemas");
+               emf = Persistence.createEntityManagerFactory("javablog");
 
                /* o nome passado vem do arquivo persistence.xml que contém as configs
                 * para conexão com o BD.
