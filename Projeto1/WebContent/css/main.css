@@ -1,0 +1,47 @@
+body {
+        padding-top: 60px !important;
+      }
+
+.singlepost p {
+	text-align: justify !important;
+}
+	 
+.singlepost p.f:first-letter {
+	font-size: 150% !important;
+	font-weight: bold !important;
+}
+
+.comments {
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px;	
+	background-color: #F9F9F9;
+	margin-bottom:30px;
+	padding:20px 60px;
+}
+
+.addbutton {
+	float: right;
+	margin: 10px 0px;
+      }
+
+.container .content { 
+	margin: 20px auto !important;
+}
+
+.content .span16 {
+	margin: 0 60px !important;
+	width: 820px;
+	overflow: hidden;
+      }
+.content .pagination ul {
+	margin: 0px auto !important;
+	width: 330px;
+	float: none !important;
+	height: 34px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
