@@ -16,15 +16,15 @@
     <exclude-unlisted-classes/>
 
 		<properties>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
-			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
-			<property name="hibernate.connection.username" value="romulobk_blog" />
-			<property name="hibernate.connection.password" value="dsd" />
-			<property name="hibernate.connection.url" value="jdbc:mysql://evolution.pbservers.com:3306/romulobk_blog" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.username" value="romulobk_blog" />
+			<property name="javax.persistence.jdbc.password" value="dsd" />
+			<property name="javax.persistence.jdbc.connection.url" value="jdbc:mysql://evolution.pbservers.com:3306/romulobk_blog" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.use_sql_comments" value="true" />
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
 		</properties>
 
 	</persistence-unit>
