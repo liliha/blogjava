@@ -39,19 +39,7 @@ public class Post {
 		this.x = x;
 };*/
 	
-	public Post(int id, User user, String title, String content, List<Category> categories, List<Comment> comments, List<Tag> tags, boolean isPublished) {
-		this.id = id;
-		this.user = user;
-		this.title = title;
-		this.content = content;
-		this.categories = categories;
-		this.comments = comments;
-		this.tags = tags;
-		this.isPublished = isPublished;
-		this.setAddDate(new Date(System.currentTimeMillis()));
-	}
 
-	
 	public int getId() {
 		return id;
 	}

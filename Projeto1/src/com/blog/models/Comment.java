@@ -23,16 +23,6 @@ public class Comment {
 	private Date addDate;
 	private boolean isApproved;
 	
-	public Comment(int id, User user, String title, String message, boolean isApproved) {
-		this.id = id;
-		this.user = user;
-		this.title = title;
-		this.message = message;
-		this.isApproved = isApproved;
-		this.setAddDate(new Date(System.currentTimeMillis()));
-	}
-
-
 	public int getId() {
 		return id;
 	}
