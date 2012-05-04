@@ -20,7 +20,7 @@ public class Post {
 	private int id;
 	@ManyToOne
 	private User user;
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date addDate;
 	private String title;
 	private String content;

@@ -19,7 +19,7 @@ public class Comment {
 	private User user;
 	private String title;
 	private String message;
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date addDate;
 	private boolean isApproved;
 	
