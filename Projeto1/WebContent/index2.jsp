@@ -49,6 +49,7 @@
       </div>
     </div>
 <div class="container">
+
       <div class="content">
       
       <c:forEach var="listPosts" items="${listPosts}">
