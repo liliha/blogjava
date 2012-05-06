@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -30,11 +31,11 @@ public class Post implements Serializable {
 	private String title;
 	@Column
 	private String content;
-	@Column
+	@JoinColumn
 	private List<Category> categories;
-	@Column
+	@JoinColumn
 	private List<Comment> comments;
-	@Column
+	@JoinColumn
 	private List<Tag> tags;
 	@Column
 	private boolean isPublished;
