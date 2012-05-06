@@ -19,6 +19,7 @@ public class ListPosts extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		EntityManager manager = Database.factory.createEntityManager();	
 		manager.close();
+
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 		rd.forward(request, response);		
 		
