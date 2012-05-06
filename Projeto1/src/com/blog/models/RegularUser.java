@@ -1,6 +1,12 @@
 package com.blog.models;
 
-public class RegularUser extends User {
+import java.io.Serializable;
+
+public class RegularUser extends User implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
+	public RegularUser() {}
 	
 
 }

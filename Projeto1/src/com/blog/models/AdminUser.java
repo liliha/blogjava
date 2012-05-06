@@ -1,5 +1,11 @@
 package com.blog.models;
 
-public class AdminUser extends User {
+import java.io.Serializable;
+
+public class AdminUser extends User implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	public AdminUser() {}
 
 }

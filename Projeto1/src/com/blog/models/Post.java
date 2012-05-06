@@ -1,20 +1,24 @@
 package com.blog.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Post {
+public class Post implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue	(strategy=GenerationType.IDENTITY)
 	private int id;
@@ -22,24 +26,21 @@ public class Post {
 	private User user;
 	@Temporal(TemporalType.DATE)
 	private Date addDate;
+	@Column
 	private String title;
+	@Column
 	private String content;
+	@Column
 	private List<Category> categories;
+	@Column
 	private List<Comment> comments;
+	@Column
 	private List<Tag> tags;
+	@Column
 	private boolean isPublished;
-	private String x;
 	
-	@Override
-	public String toString() {
-		return "Post [x=" + x + "]";
-	}
-
-	/*public Post(String x) {
-		this.x = x;
-};*/
+	public Post() {}
 	
-
 	public int getId() {
 		return id;
 	}
