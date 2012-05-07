@@ -7,13 +7,18 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
 
 @Entity
 public class Post implements Serializable {
@@ -22,6 +27,8 @@ public class Post implements Serializable {
 	
 	@Id
 	@GeneratedValue	(strategy=GenerationType.IDENTITY)
+	@OrderBy("addDate DESC")
+	@Column(name="POST_ID")
 	private int id;
 	@ManyToOne
 	private User user;
@@ -31,11 +38,12 @@ public class Post implements Serializable {
 	private String title;
 	@Column
 	private String content;
-	@JoinColumn
+	@ManyToMany(fetch=FetchType.EAGER)
+	@JoinTable(name="POST_CATEGORY", joinColumns={@JoinColumn(name="POST_ID", referencedColumnName="POST_ID")}, inverseJoinColumns={@JoinColumn(name="CATEGORY_ID", referencedColumnName="CATEGORY_ID")})
 	private List<Category> categories;
-	@JoinColumn
+	@OneToMany(mappedBy="post", fetch=FetchType.EAGER)
 	private List<Comment> comments;
-	@JoinColumn
+	@OneToMany(mappedBy="post", fetch=FetchType.EAGER)
 	private List<Tag> tags;
 	@Column
 	private boolean isPublished;

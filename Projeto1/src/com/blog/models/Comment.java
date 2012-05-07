@@ -22,8 +22,8 @@ public class Comment implements Serializable {
 	private int id;
 	@ManyToOne
 	private User user;
-	@Column
-	private String title;
+	@ManyToOne
+	private Post post;
 	@Column
 	private String message;
 	@Temporal(TemporalType.DATE)
@@ -44,13 +44,13 @@ public class Comment implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-	public String getTitle() {
-		return title;
+	
+	public Post getPost() {
+		return post;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setPost(Post post) {
+		this.post = post;
 	}
 
 	public String getMessage() {

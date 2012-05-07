@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Tag implements Serializable {
@@ -18,8 +19,18 @@ public class Tag implements Serializable {
 	private int id;
 	@Column
 	private String name;
+	@ManyToOne
+	private Post post;
 	
 	public Tag() {}
+	
+	public Post getPost() {
+		return post;
+	}
+
+	public void setPost(Post post) {
+		this.post = post;
+	}
 	
 	public int getId() {
 		return id;
