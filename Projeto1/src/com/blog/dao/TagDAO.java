@@ -1,5 +1,7 @@
 package com.blog.dao;
 
-public class TagDAO {
+import com.blog.models.Tag;
+
+public class TagDAO extends JPADao<Tag> {
 
 }

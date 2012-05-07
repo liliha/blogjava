@@ -1,6 +1,8 @@
 package com.blog.dao;
 
-public class CategoryDAO {
+import com.blog.models.Category;
+
+public class CategoryDAO extends JPADao<Category>{
 
 	  
 }

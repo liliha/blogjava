@@ -1,5 +1,7 @@
 package com.blog.dao;
 
-public class UserDAO {
+import com.blog.models.User;
+
+public class UserDAO extends JPADao<User> {
 
 }

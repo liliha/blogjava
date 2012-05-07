@@ -1,5 +1,7 @@
 package com.blog.dao;
 
-public class CommentDAO {
+import com.blog.models.Comment;
+
+public class CommentDAO extends JPADao<Comment> {
 
 }

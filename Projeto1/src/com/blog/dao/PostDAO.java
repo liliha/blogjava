@@ -1,5 +1,7 @@
 package com.blog.dao;
 
-public class PostDAO {
+import com.blog.models.Post;
+
+public class PostDAO extends JPADao<Post>{
 
 }
