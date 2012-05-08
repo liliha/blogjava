@@ -13,13 +13,11 @@ import com.blog.utils.Database;
 
 @WebServlet("/LoadIndex")
 
-public class ListPosts extends HttpServlet {
+public class ListPostsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		EntityManager manager = Database.factory.createEntityManager();	
-		manager.close();
-			
+		
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 		rd.forward(request, response);		
 		

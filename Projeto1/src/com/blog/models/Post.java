@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -38,12 +39,12 @@ public class Post implements Serializable {
 	private String title;
 	@Column
 	private String content;
-	@ManyToMany(fetch=FetchType.EAGER)
+	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinTable(name="POST_CATEGORY", joinColumns={@JoinColumn(name="POST_ID", referencedColumnName="POST_ID")}, inverseJoinColumns={@JoinColumn(name="CATEGORY_ID", referencedColumnName="CATEGORY_ID")})
 	private List<Category> categories;
-	@OneToMany(mappedBy="post", fetch=FetchType.EAGER)
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="post", fetch=FetchType.EAGER)
 	private List<Comment> comments;
-	@OneToMany(mappedBy="post", fetch=FetchType.EAGER)
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="post", fetch=FetchType.EAGER)
 	private List<Tag> tags;
 	@Column
 	private boolean isPublished;
