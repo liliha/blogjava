@@ -45,3 +45,8 @@ a:hover {
 	text-decoration: none;
 }
 
+.msg {
+	width: 350px;
+	text-align: center;
+	margin: 0 auto;	
+}

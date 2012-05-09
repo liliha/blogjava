@@ -1,5 +1,5 @@
-    <footer>
-          <p>&copy; Nome do autor 2012</p>
+     <footer>
+          <p>${initParam.authorname} &copy; Todos os direitos reservados</p>
         </footer>
       </div> <!-- fecha div content -->
     </div> <!-- fecha div container -->

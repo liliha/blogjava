@@ -1,6 +1,8 @@
 package com.blog.controllers;
 
 import java.io.IOException;
+import java.util.List;
+
 import com.blog.dao.*;
 
 import javax.servlet.ServletException;
@@ -13,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import com.blog.models.User;
 
 
-@WebServlet("/LoginCheck")
+@WebServlet("/Login")
 
 public class LoginServlet extends HttpServlet {
 	
@@ -31,11 +33,29 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String login 	= request.getParameter("login");
+		HttpSession session = request.getSession();
+
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
-		User user = null;
-		
+		UserDAO uDAO = new UserDAO();
+        uDAO.begin();
+        
+        User user = new User();
+        user.setEmail(email);
+        user.setPassword(password);
+        User u = uDAO.findByEmail(user.getEmail());
+	    uDAO.close();
+	    
+	    if ((u != null) && user.getPassword().equals(u.getPassword())) {
+	    	session.setAttribute("isLoggedIn", true);
+			session.setAttribute("userLogin", email);
+			response.sendRedirect(request.getContextPath());
+	    }
+	    else {
+	    	session.setAttribute("msg", "E-mail ou senha inv&aacute;lidos.");
+	    	response.sendRedirect("logina.jsp");
+	    }
 		
 	}
 

@@ -16,8 +16,8 @@
 			<property name="javax.persistence.jdbc.user" value="romulobk_blog" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://evolution.pbservers.com:3306/romulobk_blog" />
-			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+				value="jdbc:mysql://74.54.23.26:3306/romulobk_blog" />
+			<property name="eclipselink.ddl-generation" value="create-tables" />
 			<property name="eclipselink.logging.level" value="INFO" />
 		</properties>
 	</persistence-unit>

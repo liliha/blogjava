@@ -22,30 +22,22 @@ public class User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Id
+	
 	@GeneratedValue	(strategy=GenerationType.IDENTITY)
 	private int id;
-	@Column
-	private String login;
-	@Column
-	private String name;
+	@Id
 	@Column
 	private String email;
+	@Column
+	private String name;
 	@Column
 	private String password;
 
 	public User() {}
+	
 
 	public int getId() {
 		return id;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
 	}
 
 	public String getName() {

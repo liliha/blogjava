@@ -10,6 +10,8 @@ import javax.persistence.NonUniqueResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import com.blog.models.User;
+
 public class JPADao<T> implements InterfaceDAO<T> {
 	protected static EntityManager manager;
 	protected JPADao(){
@@ -57,11 +59,10 @@ public class JPADao<T> implements InterfaceDAO<T> {
 	}
 	
 	@SuppressWarnings("unchecked")
-	protected List<T> findByField(String campo, String valor) 	{
-		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass()
-                .getGenericSuperclass()).getActualTypeArguments()[0];
+	private List<T> findByField(String campo, String valor) 	{
+		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 		Query query = getManager().createQuery("select x from " + type.getSimpleName() + " x " +
-				"where x.” +campo+ ” = \"" +valor+ "\"");
+				"where x." +campo+ " = \"" +valor+ "\"");
 		return (List<T>) query.getResultList();
 	}
 	
@@ -99,8 +100,7 @@ public class JPADao<T> implements InterfaceDAO<T> {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
-	public  List<T> findAllByQuery(String consulta){		
+	public  List findAllByQuery(String consulta){		
 		try{
 			Query q = getManager().createQuery(consulta);
 			return q.getResultList();
@@ -113,13 +113,12 @@ public class JPADao<T> implements InterfaceDAO<T> {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
-	public  List<T> findAgregateByQuery(String consulta){
+	public  List findAgregateByQuery(String consulta){
 		Query q = getManager().createQuery(consulta);
 		return q.getResultList();
 	}
 		
-
+	@SuppressWarnings("unchecked")
 	public int updadeAll(String consulta) {
 		Query q = getManager().createQuery(consulta);
 		int linhas = q.executeUpdate();

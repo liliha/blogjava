@@ -11,6 +11,7 @@ import javax.persistence.DiscriminatorValue;
 public class AdminUser extends User implements Serializable {
 
 	private static final long serialVersionUID = 1L;	
+	
 	public AdminUser() {}
 
 }

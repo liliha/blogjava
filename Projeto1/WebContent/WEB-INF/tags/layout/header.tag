@@ -5,7 +5,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Nome do blog</title>
+    <title>${initParam.blogtitle}</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -29,21 +29,22 @@
           <ul class="nav">
           </ul>
 	 <p class="pull-right">
-	 
-	<!--  <?php
-	    $user_login = $this->session->userdata('login');
-	    $logado = $this->session->userdata('is_logged_in');
-	    $admin = $this->session->userdata('admin');
-	    
-		if($logado == NULL){
-		  echo 'Bem vindo! '. anchor('login', 'Efetue seu login.');
-		} elseif ($admin){
-		      echo 'Voc&ecirc; est&aacute; logado no modo '.anchor('admin/','administrador').'. '.anchor('login/logout', 'Sair');
-		  }else{
-		      echo 'Ol&aacute;, '. $user_login .'! '.anchor('login/logout', 'Sair');
-		  }
-	 ?>-->
+	 	<c:choose>
+	 		<c:when test="${isLoggedIn == NULL}">
+				Bem vindo! <a href="login.jsp">Efetue login.</a>
+			</c:when>
+			<c:otherwise>
+				Ol&aacute;, ${userLogin} <a href="index.jsp?action=logout">Sair</a>
+			</c:otherwise>
+		</c:choose>
 	 </p>
         </div>
       </div>
 </div>
+<c:if test="${!empty msg}">
+	<div class="label warning msg">
+		${msg}
+		<c:remove var="msg"/>
+	</div>
+</c:if>
+
