@@ -39,9 +39,41 @@ public class PostServlet extends HttpServlet {
 			rd.forward(request, response);
 			
 		}
+				
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String action = request.getParameter("action");
+		
+		//Editar post
+		if(action.equals("edit")){
+			
+			//pega id do post
+			Integer id = Integer.parseInt(request.getParameter("id"));
+			
+			//instancia objeto PostDAO
+			PostDAO pDAO = new PostDAO();
+			pDAO.begin();
+			Post post = new Post();
+			post.setId(id);
+			Post tPost = pDAO.findByID(post.getId());
+			pDAO.close();
+			
+			//Redireciona para o jsp para editar com o objeto post
+			request.setAttribute("postObj", tPost);
+			RequestDispatcher rd = request.getRequestDispatcher("postEdit.jsp");
+			rd.forward(request, response);
+		}
+		
+		//Deletar post
+		if(action.equals("delete")){
+			
+		}
+		
+		//Adicionar novo post
+		if(action.equals("add")){
+			
+		}
 	}
 
 }
