@@ -9,12 +9,6 @@
        <c:forEach var="listPosts" items="${listPosts}">
 	 	${listPosts} <br />
 	  </c:forEach>
-      
-	      <!-- <? if($this->session->flashdata('message')): ?> 
-               <div class="alert-message info fade in">
-               <? echo $this->session->flashdata('message');  ?>
-               </div>
-               <?php endif; ?>-->
                
 <layout:footer/>
  

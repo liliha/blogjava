@@ -39,6 +39,19 @@ public class PostServlet extends HttpServlet {
 			rd.forward(request, response);
 			
 		}
+		
+		if(action.equals("show")) {
+			String title = request.getParameter("title");
+			String content = request.getParameter("content");
+			
+			PostDAO pDAO = new PostDAO();
+			pDAO.begin();
+			Post tPost = new Post();
+			pDAO.persist(tPost);
+			pDAO.commit();
+			pDAO.close();
+			
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
