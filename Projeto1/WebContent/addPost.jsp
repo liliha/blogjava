@@ -32,6 +32,15 @@
 				<input type="text" name="tags" value="" id="tags" class="span14" /> 
 				<br />
 				<br /> 
+				<jsp:useBean id="daoCategory" class="com.blog.dao.CategoryDAO">
+				<label for="category">Categoria:</label>
+				<select name="category">
+				<c:forEach var="category" items="${categories}">
+					<option value="${category.id}">${category.name}</option>
+				</c:forEach>
+				</select>
+				</jsp:useBean>
+				<hr>
 				<label for="published">Situa&ccedil;&atilde;o:</label> &nbsp;&nbsp;
 				<input type="radio" name="published" value="1" id="published" checked="checked" />&nbsp; Publicado 
 				<input type="radio" name="published" value="0" id="published" />&nbsp;Salvo no Rascunho 
