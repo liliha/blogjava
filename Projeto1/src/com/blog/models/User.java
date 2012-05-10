@@ -1,6 +1,7 @@
 package com.blog.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
@@ -32,7 +33,7 @@ public class User implements Serializable {
 	private String name;
 	@Column
 	private String password;
-
+	
 	public User() {}
 	
 

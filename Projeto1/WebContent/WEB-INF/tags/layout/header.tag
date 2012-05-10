@@ -34,7 +34,7 @@
 				Bem vindo! <a href="login.jsp">Efetue login.</a>
 			</c:when>
 			<c:otherwise>
-				Ol&aacute;, ${userLogin} <a href="index.jsp?action=logout">Sair</a>
+				Ol&aacute;, ${userLogin} <a href="${initParam.blogPath}?action=logout">Sair</a>
 			</c:otherwise>
 		</c:choose>
 	 </p>
