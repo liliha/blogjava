@@ -55,6 +55,10 @@ public class Post implements Serializable {
 		return id;
 	}
 	
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public User getUser() {
 		return user;
 	}
@@ -124,17 +128,12 @@ public class Post implements Serializable {
 		this.isPublished = isPublished;
 	}
 
-	public List<Post> listar() {
-		
-		List<Post> coisas = new ArrayList<Post>();
-	//	coisas.add(0, new Post("aaa"));
-		//coisas.add(1, new Post("bbb"));
-		//coisas.add(2, new Post("ccc"));
-	//	coisas.add(3, new Post("ddd"));
-	//	coisas.add(4, new Post("eee"));
-	//	coisas.add(5, new Post("fff"));
-		
-		return coisas;
+	@Override
+	public String toString() {
+		return "Post [id=" + id + ", user=" + user + ", addDate=" + addDate
+				+ ", title=" + title + ", content=" + content + ", categories="
+				+ categories + ", comments=" + comments + ", tags=" + tags
+				+ ", isPublished=" + isPublished + "]";
 	}
 
 }
