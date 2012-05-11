@@ -67,6 +67,16 @@ public class PostServlet extends HttpServlet {
 		
 		//Deletar post
 		if(action.equals("delete")){
+			//pega id do post
+			Integer id = Integer.parseInt(request.getParameter("id"));
+			
+			//instancia objeto PostDAO
+			PostDAO pDAO = new PostDAO();
+			pDAO.begin();
+			Post post = new Post();
+			post.setId(id);
+			Post tPost = pDAO.findByID(post.getId());
+			pDAO.close();
 			
 		}
 		

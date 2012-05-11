@@ -26,16 +26,17 @@
 		
 			<form action="Update" method="POST">
 				<label>Título</label><br /><br />
-				<input type="text" name="titulo" class="span14" /><br />
+				<input type="text" name="titulo" class="span14" value="${postObj.title}" /><br />
 				<!-- hidden forms para id post e id tags? -->
 				<label>Texto</label><br /><br />
 				<textarea class="span14" rows="20">
-					<!--  text? -->
+					${postObj.content}
 				</textarea><br /><br />
 				<!-- tags? -->
 				Situação: <input type="radio" name="published" id="published" value='1' /> Publicado <input type="radio" name="published" id="published" value="0" /> Não-Publicado
+				Tag(s): <input type="text" name="tags" class="span14" value="${postObj.tags" /><br />
 				<br /><br />
-				<input type="submit" name="submit" value="Enviar" class="btn primary"  />
+				<input type="submit" name="submit" value="Editar" class="btn primary"  />
 			</form>
 
 </div>
