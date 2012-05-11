@@ -14,7 +14,7 @@ import com.blog.dao.CategoryDAO;
 import com.blog.models.Category;
 import com.blog.models.Post;
 
-@WebServlet("/CategoriesPostServlet")
+@WebServlet("/admin/AddPost")
 public class CategoriesPostServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
