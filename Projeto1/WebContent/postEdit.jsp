@@ -14,14 +14,20 @@
 				<label>Título</label><br /><br />
 				<input type="text" name="titulo" class="span14" value="${postObj.title}" /><br />
 				<!-- hidden forms para id post e id tags? -->
-				<label>Texto</label><br /><br />
+				<label>Texto:</label><br /><br />
 				<textarea class="span14" rows="20">
 					${postObj.content}
 				</textarea><br /><br />
 				<!-- tags? -->
-				Situação: <input type="radio" name="published" id="published" value='1' /> Publicado <input type="radio" name="published" id="published" value="0" /> Não-Publicado
-				Tag(s): <input type="text" name="tags" class="span14" value="${postObj.tags" /><br />
+				<label for="published">Situa&ccedil;&atilde;o:</label> &nbsp;&nbsp; <input type="radio" name="published" id="published" value='1' /> Publicado <input type="radio" name="published" id="published" value="0" /> Salvo no Rascunho 
+				Tag(s): <input type="text" name="tags" class="span14" value="${postObj.tags}" /><br />
 				<br /><br />
+				<label for="category">Categoria:</label>
+				<select name="category">
+				<c:forEach items="${categoriesObj}" var="category">
+					<option value="${category.id}">${category.name}</option>
+				</c:forEach>
+				</select>
 				<input type="submit" name="submit" value="Editar" class="btn primary"  />
 			</form>
 
