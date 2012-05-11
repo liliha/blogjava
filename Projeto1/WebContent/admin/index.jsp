@@ -16,7 +16,7 @@
 		</ul>
 		<div id="my-tab-content" class="tab-content">
 			<div class="active tab-pane" id="posts">
-				<h3>Adicionar Posts</h3>
+				<h3>Gerenciar Posts</h3>
 				<div class="addbutton">
 					<a class="btn info" href="AddPost">Adicionar novo post</a>
 				</div>
@@ -29,13 +29,21 @@
 						<th></th>
 						<th></th>
 						</tr>
-				</table>
+						<c:forEach var="post" items="${posts}">
+                        <tr>
+                        <td>${post.id}</td>
+                        <td>${post.title}</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        </c:forEach>
+						</table>
+						</div>
 				</div>
 			</div>
-		</div>
 		<div class="tab-pane" id="users">
 		<h3>Gerenciar Usu&aacute;rios</h3>
-		<div class="addbutton">
+				<div class="addbutton">
                         <a class="btn info" href="AddUser">Adicionar novo usu&aacute;rio</a>
                 </div>
                 <div class="row">
@@ -50,14 +58,24 @@
                         <th></th>
                         <th></th>
                         </tr>
-
-				  </table>
+                        <c:forEach var="user" items="${users}">
+                        <tr>
+                        <td>${user.id}</td>
+                        <td>${user.name}</td>
+                        <td>${user.email}</td>
+                        <td>user.ismuted</td>
+                        <td>user.type</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        </c:forEach>
+				 		</table>
+						</div>
 				</div>
-			</div>
 	    </div>
 		<div class="tab-pane" id="categories">
-		<h3>Gategorias</h3>
-		<div class="addbutton">
+		<h3>Gerenciar Categorias</h3>
+				<div class="addbutton">
                         <a class="btn info" href="AddCategory">Adicionar nova categoria</a>
                 </div>
                 <div class="row">
@@ -68,12 +86,20 @@
                         <th>Categoria</th>
 						<th>Descri&ccedil;&atilde;o</th>	
                         <th></th>
-                        <th></th>
-				
-  	                <tr>
-  	            </table>
-              </div>
-            </div>
+                        <th></th>				
+  	                	</tr>
+  	                	<c:forEach var="category" items="${categories}">
+                        <tr>
+                        <td>${category.id}</td>
+                        <td>${category.name}</td>
+                        <td>${category.description}</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        </c:forEach>
+  	          			</table>
+              			</div>
+            	</div>
 	     </div>
 	</div>
 <layout:footer />
