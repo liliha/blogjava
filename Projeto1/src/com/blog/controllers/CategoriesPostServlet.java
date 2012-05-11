@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.blog.dao.CategoryDAO;
 import com.blog.models.Category;
-import com.blog.models.Post;
 
 @WebServlet("/admin/AddPost")
 public class CategoriesPostServlet extends HttpServlet {

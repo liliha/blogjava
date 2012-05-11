@@ -33,8 +33,8 @@
                         <tr>
                         <td>${post.id}</td>
                         <td>${post.title}</td>
-                        <td></td>
-                        <td></td>
+                        <td width="50px"><button class="btn" name="submit" value="edit" type="submit">Editar</button></td>
+			  			<td width="50px"><button class="btn danger" name="submit" value="delete" type="submit">Excluir</button></td>
                         </tr>
                         </c:forEach>
 						</table>
@@ -50,7 +50,6 @@
                         <div class="span16">
                         <table class="zebra-striped" style="margin: 0px auto !important;">
                         <tr>
-                        <th>ID</th>
                         <th>Nome</th>
 						<th>E-mail</th>
 						<th>Permiss&atilde;o</th>
@@ -60,13 +59,12 @@
                         </tr>
                         <c:forEach var="user" items="${users}">
                         <tr>
-                        <td>${user.id}</td>
                         <td>${user.name}</td>
                         <td>${user.email}</td>
                         <td>user.ismuted</td>
                         <td>user.type</td>
-                        <td></td>
-                        <td></td>
+                        <td width="50px"><button class="btn" name="submit" value="edit" type="submit">Editar</button></td>
+			  			<td width="50px"><button class="btn danger" name="submit" value="delete" type="submit">Excluir</button></td>
                         </tr>
                         </c:forEach>
 				 		</table>
@@ -93,8 +91,8 @@
                         <td>${category.id}</td>
                         <td>${category.name}</td>
                         <td>${category.description}</td>
-                        <td></td>
-                        <td></td>
+                        <td width="50px"><button class="btn" name="submit" value="edit" type="submit">Editar</button></td>
+			  			<td width="50px"><button class="btn danger" name="submit" value="delete" type="submit">Excluir</button></td>
                         </tr>
                         </c:forEach>
   	          			</table>

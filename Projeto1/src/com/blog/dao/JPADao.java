@@ -10,8 +10,6 @@ import javax.persistence.NonUniqueResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import com.blog.models.User;
-
 public class JPADao<T> implements InterfaceDAO<T> {
 	protected static EntityManager manager;
 	protected JPADao(){

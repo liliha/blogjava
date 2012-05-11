@@ -1,15 +1,12 @@
 package com.blog.models;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -24,8 +21,6 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	
-	@GeneratedValue	(strategy=GenerationType.IDENTITY)
-	private int id;
 	@Id
 	@Column
 	private String email;
@@ -36,11 +31,6 @@ public class User implements Serializable {
 	
 	public User() {}
 	
-
-	public int getId() {
-		return id;
-	}
-
 	public String getName() {
 		return name;
 	}

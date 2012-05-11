@@ -1,7 +1,6 @@
 package com.blog.controllers;
 
 import java.io.IOException;
-import java.util.List;
 
 import com.blog.dao.*;
 
@@ -12,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.blog.models.AdminUser;
 import com.blog.models.User;
 
 
@@ -50,11 +50,16 @@ public class LoginServlet extends HttpServlet {
 	    if ((u != null) && user.getPassword().equals(u.getPassword())) {
 	    	session.setAttribute("isLoggedIn", true);
 			session.setAttribute("userLogin", email);
-			response.sendRedirect(request.getContextPath());
+			if(u instanceof AdminUser) {
+				response.sendRedirect(request.getContextPath() + "/admin/");
+			}
+			else {
+				response.sendRedirect(request.getContextPath());
+			}
 	    }
 	    else {
 	    	session.setAttribute("msg", "E-mail ou senha inv&aacute;lidos.");
-	    	response.sendRedirect("logina.jsp");
+	    	response.sendRedirect("login.jsp");
 	    }
 		
 	}
