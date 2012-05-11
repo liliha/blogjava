@@ -1,6 +1,7 @@
 package com.blog.controllers;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,37 +10,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.blog.dao.PostDAO;
+import com.blog.dao.CategoryDAO;
+import com.blog.models.Category;
 import com.blog.models.Post;
 
-@WebServlet(description = "Exibe post em versão completa", urlPatterns = { "/showPost" })
-public class ShowPostServlet extends HttpServlet {
-
+@WebServlet("/CategoriesPostServlet")
+public class CategoriesPostServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    public ShowPostServlet() {
+  
+	public CategoriesPostServlet() {
         super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// Pegar ID do post
-         String postID = request.getParameter("postID");
-	
-         PostDAO pDAO = new PostDAO();
-         pDAO.begin();
-         Post post = new Post();
-         Post p = pDAO.findByID(post.getId());
-         pDAO.close();
-         
-		// Levar dados do post para o jsp
+		CategoryDAO cDAO = new CategoryDAO();
+		cDAO.begin();
+		List<Category> categories = cDAO.findAll();
+		cDAO.close();			
+		request.setAttribute("categoriesObj", categories);
+		RequestDispatcher rd = request.getRequestDispatcher("addPost.jsp");
+		rd.forward(request, response);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("Post.jsp");
-		rd.forward(request, response);		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 	}
 
 }
