@@ -4,6 +4,48 @@
 
 <layout:header/>
 
+<layout:tinymce/>
+
+<hr />
+ <h3>Editar post</h3>
+<div class="span16">
+		
+			<form action="Update" method="POST">
+				<label>Título</label><br /><br />
+				<input type="text" name="titulo" class="span14" value="${postObj.title}" /><br />
+				<!-- hidden forms para id post e id tags? -->
+				<label>Texto</label><br /><br />
+				<textarea class="span14" rows="20">
+					${postObj.content}
+				</textarea><br /><br />
+				<!-- tags? -->
+				Situação: <input type="radio" name="published" id="published" value='1' /> Publicado <input type="radio" name="published" id="published" value="0" /> Não-Publicado
+				Tag(s): <input type="text" name="tags" class="span14" value="${postObj.tags" /><br />
+				<br /><br />
+				<input type="submit" name="submit" value="Editar" class="btn primary"  />
+			</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container">
       <div class="content">
 		<div class="hero-unit singlepost">
@@ -37,4 +79,3 @@
 
 		</div>
 <layout:footer/>
- 

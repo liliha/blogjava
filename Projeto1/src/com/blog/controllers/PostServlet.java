@@ -26,7 +26,8 @@ public class PostServlet extends HttpServlet {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	//	HttpSession session = request.getSession();
 		
@@ -50,6 +51,7 @@ public class PostServlet extends HttpServlet {
 		
 }
 
+				
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
@@ -91,6 +93,42 @@ public class PostServlet extends HttpServlet {
 			
 		}
 
+	
+		//Editar post
+		if(action.equals("edit")){
+			
+			//pega id do post
+			Integer id = Integer.parseInt(request.getParameter("id"));
+			
+			//instancia objeto PostDAO
+			PostDAO pDAO = new PostDAO();
+			pDAO.begin();
+			Post post = new Post();
+			post.setId(id);
+			Post tPost = pDAO.findByID(post.getId());
+			pDAO.close();
+			
+			//Redireciona para o jsp para editar com o objeto post
+			request.setAttribute("postObj", tPost);
+			RequestDispatcher rd = request.getRequestDispatcher("postEdit.jsp");
+			rd.forward(request, response);
+		}
+		
+		//Deletar post
+		if(action.equals("delete")){
+			//pega id do post
+			Integer id = Integer.parseInt(request.getParameter("id"));
+			
+			//instancia objeto PostDAO
+			PostDAO pDAO = new PostDAO();
+			pDAO.begin();
+			Post post = new Post();
+			post.setId(id);
+			Post tPost = pDAO.findByID(post.getId());
+			pDAO.close();
+			
+		}
+		
 	}
 
 }
